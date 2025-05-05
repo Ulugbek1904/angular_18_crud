@@ -1,13 +1,13 @@
-<div class="row">
-  <div class="col-8">
-    <div class="card">
-      <div class="card-header">
+<div class="main-row">
+  <div class="left-section">
+    <div class="panel">
+      <div class="panel-header">
         <h6>Employee List</h6>
       </div>
-      <div class="card-body">
-        <div class="row">
-          <div class="col-12">
-            <table class="table tabel-bordered">
+      <div class="panel-body">
+        <div class="content-row">
+          <div class="full-width">
+            <table class="data-table">
               <thead>
                 <tr>
                   <th>Sr No</th>
@@ -25,8 +25,8 @@
                     <td>{{item.contactNo}}</td>
                     <td>{{item.emailId}}</td>
                     <td>
-                      <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>
-                      <button class="btn btn-danger mx-2" (click)="onDelete(item.empId)">Delete</button>
+                      <button class="edit-button" (click)="onEdit(item)">Edit</button>
+                      <button class="delete-button space-left" (click)="onDelete(item.empId)">Delete</button>
                     </td>
                   </tr>
                 }
@@ -37,18 +37,18 @@
       </div>
     </div>
   </div>
-  <div class="col-4">
-    <div class="card">
-      <div class="card-header">
+  <div class="right-section">
+    <div class="panel">
+      <div class="panel-header">
         New Employee
       </div>
-      <div class="card-body">
-        <form action=""  [formGroup]="employeeForm">
-          <div class="row">
-            <div class="col-6">
+      <div class="panel-body">
+        <form action="" [formGroup]="employeeForm">
+          <div class="content-row">
+            <div class="half-width">
               <label for="">Name</label>
-              <input type="text" formControlName="name" class="form-control">
-              <div class="text-danger">
+              <input type="text" formControlName="name" class="input-field">
+              <div class="error-text">
                 @if(employeeForm.controls['name'].touched){
                   @if(employeeForm.controls['name'].errors?.['required']){
                     <span>Name is required</span>
@@ -56,26 +56,26 @@
                 }
               </div>
             </div>
-            <div class="col-6">
+            <div class="half-width">
               <label for="">Email-id</label>
-              <input type="text" formControlName="emailId" class="form-control">
+              <input type="text" formControlName="emailId" class="input-field">
             </div>
-            <div class="col-6">
+            <div class="half-width">
               <label for="">Contact N0</label>
-              <input type="text" formControlName="contactNo" class="form-control">
+              <input type="text" formControlName="contactNo" class="input-field">
             </div>
-            <div class="col-6">
+            <div class="half-width">
               <label for="">City </label>
-              <input type="text" formControlName="city" class="form-control">
+              <input type="text" formControlName="city" class="input-field">
             </div>
-            <div class="col-6">
+            <div class="half-width">
               <label for="">State</label>
-              <input type="text" formControlName="state" class="form-control">
+              <input type="text" formControlName="state" class="input-field">
             </div>
-            <div class="col-6">
+            <div class="half-width">
               <label for="">Pin Code</label>
-              <input type="text" formControlName="pinCode" class="form-control">
-              <div class="text-danger">
+              <input type="text" formControlName="pinCode" class="input-field">
+              <div class="error-text">
                 @if(employeeForm.controls['pinCode'].touched){
                   @if(employeeForm.controls['pinCode'].errors?.['required']){
                     <span>pinCode is required</span>
@@ -86,20 +86,20 @@
                 }
               </div>
             </div>
-            <div class="col-12">
+            <div class="full-width">
               <label for="">Address</label>
-              <textarea class="form-control" formControlName="address"></textarea>
+              <textarea class="input-field" formControlName="address"></textarea>
             </div>
           </div>
-          <div class="row">
-            <div class="col-6 text-center">
-              <button class="btn btn-secondary" type="button" (click)="reset()">Reset</button>
+          <div class="content-row">
+            <div class="half-width center-text">
+              <button class="cancel-button" type="button" (click)="reset()">Reset</button>
             </div>
-            <div class="col-6 text-center">
+            <div class="half-width center-text">
               @if(employeeForm.controls['empid'].value == '1'){
-                <button class="btn btn-success" [disabled]="employeeForm.invalid" (click)="onSave()">Save Employee</button>
+                <button class="save-button" [disabled]="employeeForm.invalid" (click)="onSave()">Save Employee</button>
               } @else {
-              <button class="btn btn-warning" (click)="onUpdate()">Update Employee</button>
+              <button class="update-button" (click)="onUpdate()">Update Employee</button>
               }
             </div>
           </div>
