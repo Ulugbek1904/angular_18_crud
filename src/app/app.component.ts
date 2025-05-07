@@ -49,7 +49,7 @@ export class AppComponent {
     const oldData = localStorage.getItem("EmpData");
     if(oldData != null){
       const parseData = JSON.parse(oldData);
-      this.employeeForm.controls['empid'].setValue(parseData.lenght + 1);
+      this.employeeForm.controls['empid'].setValue(parseData.length + 1);
       this.employeeList.unshift(this.employeeForm.value);
     } else {
       this.employeeList.unshift(this.employeeForm.value);
@@ -71,7 +71,6 @@ export class AppComponent {
       record.contactNo = this.employeeForm.controls['contactNo'].value;
       record.emailId = this.employeeForm.controls['emailId'].value;
       record.name = this.employeeForm.controls['name'].value;
-      record.pinCode = this.employeeForm.controls['pinCode'].value;
       record.state = this.employeeForm.controls['state'].value;
       record.pinCode = this.employeeForm.controls['pinCode'].value;
     }
