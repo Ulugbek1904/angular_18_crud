@@ -18,3 +18,4 @@ A simple web application for managing employee information.
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/employee-management-system.git
+![Employee List](https://github.com/Ulugbek1904/angular_18_crud/blob/main/src/assets/Webpage/Screenshot%202025-05-07%20184628.png?raw=true)
